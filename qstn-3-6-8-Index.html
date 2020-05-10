@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Index for Questions 3, 6 and 8. Rest of the questions depend node.js command line -->
+    
+    <label for="text">Enter String</label>
+    <input type="text" placeholder="Enter String Here!">
+    <button type="submit" onclick="swapCase()">Swap Case!</button><br>
+    <label for="" hidden=true>String Letters' Case Swapped :</label><br>
+    <label id="result" for="result"></label><br><br>
+
+    <label for="text">Enter a String:</label>
+    <input type="text" id="string" placeholder="Type In Here.."><label for="text" style="font-size: small;">Maximum Characters allowed is : 20</label><br>
+    <button onclick="checkStringTruncate()">Check For Truncation!</button><label for="button" hidden=true id="stringStatus"></label><br><br>
+    
+    <form action="#" onsubmit="createData()">
+        <label for="name">Enter Name:</label>
+        <input id="name" type="text" placeholder="Name of the Student" required><br>
+        <label for="class">Enter Class:</label>
+        <input id="class" type="number" placeholder="Class Of Student" required><br>
+        <label for="roll">Enter Roll Number:</label>
+        <input id="roll" type="number" placeholder="Roll Number Of Student" required><br>
+        <button id="submit">Create Student Data</button><label id="submitStatus" for="submit"></label>
+    </form>
+    <button onclick="sortData()">Sort Data</button><label for="" id="sortStatus">Sorting Based On Name.</label>
+    <table id="sortData"></table>
+
+    <script src="qstn3.js"></script>    <!-- string letters' case swapping-->
+    <script src="qstn6.js"></script>    <!-- string truncation-->
+    <script src="qstn8.js"></script>    <!-- Object Sorting-->
+</body>
+</html>
