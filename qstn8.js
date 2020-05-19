@@ -9,6 +9,7 @@ function studentData(name,classNo,roll)     //object constructor function
 function createData()       //for creating objects
 {
     let studName=document.getElementById("name").value;     //accessing input values
+    studName=studName.toLowerCase();    //'name' to toLowerCase
     let studClass=document.getElementById("class").value;
     let studRoll=document.getElementById("roll").value;  
     document.getElementById("submitStatus").textContent=''; //resetting submission status
@@ -52,7 +53,7 @@ function sortData()         //for sorting objects
             {
                 studData=studentList[i];
                 studentList[i]=studentList[j];
-                studentList[j]=studData;         
+                studentList[j]=studData;     
             }
             else if(studentList[i].name==studentList[j].name)
             {
@@ -77,18 +78,33 @@ function sortData()         //for sorting objects
     }
             //setting table header
     table="<tr align=center><th>Serial No.</th><th>Name</th><th>Roll Number</th><th>Class</th></tr>";
-    for(let i=0;i<studentList.length;i++)   //setting table rows with object data
+                                    // for(let i=0;i<studentList.length;i++)   //setting table rows with object data
+                                    // {
+                                    //     table += "<tr align=center><td>" +
+                                    //     (i+1) +
+                                    //     "</td><td>" +
+                                    //     studentList[i].name.toUpperCase() +     //'name' in uppercase 
+                                    //     "</td><td>" +
+                                    //     studentList[i].roll + " " +
+                                    //     "</td><td>" +
+                                    //     studentList[i].classNo   +
+                                    //     "</td></tr>";
+                                    // }
+    let i=1;
+    for(obj in studentList)         //for...in loop
     {
-        table += "<tr align=center><td>" +
-        (i+1) +
+        table += "<tr align=center><td>" +  //setting table rows with object data
+        (i) +
         "</td><td>" +
-        studentList[i].name +
+        studentList[obj].name.toUpperCase() +     //'name' in uppercase 
         "</td><td>" +
-        studentList[i].roll + " " +
+        studentList[obj].roll + " " +
         "</td><td>" +
-        studentList[i].classNo   +
+        studentList[obj].classNo   +
         "</td></tr>";
     }
+    document.getElementById("sortStatus").textContent="Sorted!";
+    document.getElementById("sortStatus").style.color='green';
     document.getElementById("sortData").innerHTML = table; //adding created table rows to the html page
     document.getElementById("sortData").scrollIntoView();
 }   //function end
